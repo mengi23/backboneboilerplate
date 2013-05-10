@@ -31,6 +31,11 @@ define([
         var footerView = Vm.create(that, 'FooterView', FooterView, {appView: that});
         footerView.render();
       });
+      require(['views/sidebar/sidebar'], function (sidebarMenuView) {
+        // Pass the appView down into the footer so we can render the visualisation
+        var sidebarMenuView = Vm.create(that, 'sidebarMenuView', sidebarMenuView, {appView: that});
+        sidebarMenuView.render();
+      });
     
     }
   });
